@@ -113,6 +113,10 @@ li:hover {
         border-radius: 10px;
     }
 
+    #list {
+        font-size: 9px; 
+    }
+
 
     .navbar-header {
         display: none;
