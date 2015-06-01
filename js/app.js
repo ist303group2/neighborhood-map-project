@@ -92,7 +92,9 @@ function viewModel() {
       infowindow.open(map, this);
       map.panTo(marker.position); 
       marker.setAnimation(google.maps.Animation.BOUNCE);
-      setTimeout(function(){marker.setAnimation(null);}, 1450);
+      setTimeout(function(){marker.setAnimation(null);
+    }, 1450);
+    
     });
 
     markers.push(marker);
@@ -120,8 +122,7 @@ function viewModel() {
     var foursquare = 'https://api.foursquare.com/v2/venues/search?client_id=0MBYJMCUH44O2HY53XWGXMCK4B3VH1EEXW2D43UTANW3QM31&client_secret=IGRRLLVXRBMPSM0SCIPTVMEMCW3PPDMRNGZYKFEKA2PMXVEY&v=20150321&ll=47.567613,-122.294020&query=\'' + point['name'] + '\'&limit=10';
     
     // start ajax and grab: venue name, phone number and twitter handle
-    $.getJSON(foursquare)
-      .done(function(response) {
+    $.getJSON(foursquare).done(function(response) {
         self.fourSquareAPI = '<br>' + 'Foursquare Information::' + '<br>';
         var venue = response.response.venues[0];             
         var venueName = venue.name;
@@ -143,6 +144,9 @@ function viewModel() {
         if (twitterHandle !== null && twitterHandle !== undefined) {
           self.fourSquareAPI += '<br>' + 'twitter: @' + twitterHandle;
           }
+      }).fail(function(jqxhr, textStatus, error){
+        var err = textStatus + ", " + error;
+        console.log("Request Failed:" + err);  
       });
   };  
  
