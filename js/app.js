@@ -202,6 +202,7 @@ function viewModel() {
 
   // load the map in the window
   google.maps.event.addDomListener(window, 'load', init);
+  
 
 }
 
