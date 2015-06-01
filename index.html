@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="neighborhood map implemented in knockout.js">
+	<meta name="author" content="leyth adan">
+	<meta name="keywords" content="web developer, html, css, javascript, leyth adan">
+	<title>Columbia City Neighborhood</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;libraries=places"></script>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="navbar-header">
+        <a class="navbar-brand" rel="home" href="#" >
+            <img src="img/logo.png" class="logo" alt="Columbia City Parks Logo">
+        </a>
+    </div>
+
+    <input id="input" class="form-controls first" type="text"
+        placeholder="search for parks" >
+    <div id="map"></div>
+    <div id="list">
+        <!-- loop through places array, bind values into view -->
+        <ul data-bind="foreach: placeArray" class="list-group">
+            <li data-bind="click: $parent.clickMarker" class="list-group-item">            
+                <p class="park"><span data-bind="text: name"></span></p>
+                <p class="address"><span data-bind="text: address"></span></p>               
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
