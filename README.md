@@ -11,6 +11,7 @@ Upon page `load` parks in the Columbia City area are plotted on the map. A list 
 
 #####See Repo @: 
 [https://github.com/wehelie/neighborhood-map-project/tree/master]
+![screen shot 2015-06-12 at 12 50 58 pm](https://cloud.githubusercontent.com/assets/3928442/8138685/f2a571f2-1101-11e5-87b0-8ff584532e57.png)
 
 #####Resouces: 
 [Google Maps API:: Place Searches](https://developers.google.com/maps/documentation/javascript/examples/place-search)
